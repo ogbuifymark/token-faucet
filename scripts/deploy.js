@@ -58,6 +58,15 @@ async function main() {
   (await wnt.transferOwnership(faucetContract.address)).wait();
   console.log(`Toke ownership transferred to faucet contract`);
 
+  (await faucetContract.disburseTokens(10000000,busd.address)).wait();
+  (await faucetContract.disburseTokens(10000000,usdc.address)).wait();
+  (await faucetContract.disburseTokens(10000000, usdt.address)).wait();
+  (await faucetContract.disburseTokens(10000000, dai.address)).wait();
+  (await faucetContract.disburseTokens(10000000,xend.address)).wait();
+  (await faucetContract.disburseTokens(10000000,wnt.address)).wait();
+  console.log(`Faucet contract assets disbursed token`);
+  
+
   // if (hre.network.name === "mainnet" || hre.network.name === "testnet") {
     
   //   await hre.run("verify:verify", {
